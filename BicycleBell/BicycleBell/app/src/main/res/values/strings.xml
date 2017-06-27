@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BicycleBell</string>
+    <string name="icon_bell">&#xf0f3;</string>
+
+    <!-- Texts -->
+    <string name="hello_auth_text">Try some awesome features!</string>
+    <string name="auth_register">Register now</string>
+    <string name="auth_login">Login</string>
+</resources>
