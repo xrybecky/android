@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         // Media player
         final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.bicycle_bell_12);
 
-        Button button = (Button) findViewById(R.id.RingButton);
+        Button button = (Button) findViewById(R.id.main_ring_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         Typeface fontAwesome = Typeface.createFromAsset(getAssets(), "fontawesome-webfont.ttf");
 
         // Main Ring Button
-        Button button = (Button) findViewById(R.id.RingButton);
+        Button button = (Button) findViewById(R.id.main_ring_button);
         button.setTypeface(fontAwesome);
 
         // Next Component

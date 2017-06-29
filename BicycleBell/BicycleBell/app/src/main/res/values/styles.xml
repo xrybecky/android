@@ -30,6 +30,15 @@
         <item name="android:padding">10dp</item>
     </style>
 
+    <!-- Ring Button -->
+    <style name="RingButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/ring_button</item>
+        <item name="android:textSize">100sp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
     <!-- Colored Button -->
     <style name="ColoredButton">
         <item name="android:layout_width">wrap_content</item>

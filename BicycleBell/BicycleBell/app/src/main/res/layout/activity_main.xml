@@ -3,51 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:layout_gravity="center"
+    android:weightSum="8"
     tools:context="com.bicyclebell.viko.bicyclebell.MainActivity">
 
 
     <LinearLayout
         android:id="@+id/viewA"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.3"
-        android:background="@android:color/background_light"
-        android:orientation="horizontal" >
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:background="@android:color/background_light" >
 
         <fragment
-            android:id="@+id/authentication_fragment"
-            android:name="com.bicyclebell.viko.bicyclebell.fragments.AuthenticationFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"
+            android:name="com.bicyclebell.viko.bicyclebell.fragments.AuthenticationFragment"/>
 
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/viewB"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.7"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:layout_weight="4"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/viewBinner"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@android:color/transparent">
+
+            <Button
+                android:id="@+id/main_ring_button"
+                style="@style/RingButton"
+                android:text="@string/icon_bell" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewC"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:background="@android:color/transparent"
         android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/RingButton"
-            style="@style/DefaultButton"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="@string/icon_bell" />
-    </RelativeLayout>
-
-    <!-- FAB
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:clickable="true"
-        android:src="@string/icon_bell"
-        android:layout_gravity="right|top"/>
-     -->
+    </LinearLayout>
 </LinearLayout>
