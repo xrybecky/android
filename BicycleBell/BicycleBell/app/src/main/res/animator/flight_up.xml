@@ -9,7 +9,7 @@
         android:duration="500" />
 
     <objectAnimator
-        android:propertyName="alpha"
+        android:propertyName="opacity"
         android:valueTo="255"
         android:valueType="floatType"
         android:duration="500" />

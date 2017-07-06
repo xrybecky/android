@@ -1,157 +1,131 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.bicyclebell.viko.bicyclebell.fragments.SimpleLocationFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
-    tools:context="com.bicyclebell.viko.bicyclebell.fragments.SimpleLocationFragment">
+    android:orientation="horizontal"
+    android:weightSum="3"
+    android:baselineAligned="false"
+    android:gravity="center">
 
 
+    <!-- ALTITUDE -->
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/altitudeComponent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:orientation="horizontal"
-        android:weightSum="3"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:baselineAligned="false"
-        android:layout_gravity="center_horizontal">
+        android:weightSum="1"
+        android:gravity="center_horizontal">
 
-
-        <!-- ALTITUDE -->
         <LinearLayout
-            android:id="@+id/altitudeComponent"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:gravity="center_horizontal">
 
             <TextView
                 android:id="@+id/altitudeIcon"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="5dp"
-                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                style="@style/LocationPropertyText"
                 android:text="@string/icon_up_down"/>
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/altitudeValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:text="@string/altitude"/>
+                style="@style/LocationPropertyValue"
+                android:text="42"/>
 
-                <TextView
-                    android:id="@+id/altitudeValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="32sp"
-                    android:text="42"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textAlignment="center"
-                    android:text="@string/meters"/>
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/LocationPropertyText"
+                android:textAlignment="center"
+                android:text="@string/meters"/>
         </LinearLayout>
+    </LinearLayout>
 
-        <!-- SPEED -->
+    <!-- SPEED -->
+    <LinearLayout
+        android:id="@+id/speedComponent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:weightSum="1">
+
+
+
         <LinearLayout
-            android:id="@+id/speedComponent"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
-            android:weightSum="1">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
             <TextView
                 android:id="@+id/speedIcon"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="5dp"
-                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                style="@style/LocationPropertyText"
                 android:text="@string/icon_speedmeter"/>
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/speedValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:text="@string/speed"/>
+                style="@style/LocationPropertyValue"
+                android:text="24"/>
 
-                <TextView
-                    android:id="@+id/speedValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="32sp"
-                    android:text="24"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textAlignment="center"
-                    android:text="@string/kmh"/>
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/LocationPropertyText"
+                android:text="@string/kmh"/>
         </LinearLayout>
+    </LinearLayout>
 
-        <!-- SPEED -->
+
+    <!-- DISTANCE -->
+    <LinearLayout
+        android:id="@+id/distanceComponent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:weightSum="1">
+
         <LinearLayout
-            android:id="@+id/distanceComponent"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
-            android:weightSum="1">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
             <TextView
                 android:id="@+id/distanceIcon"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="5dp"
-                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                style="@style/LocationPropertyText"
                 android:text="@string/icon_distance"/>
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/distanceValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:text="@string/distance"/>
+                style="@style/LocationPropertyValue"
+                android:text="894"/>
 
-                <TextView
-                    android:id="@+id/distanceValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="32sp"
-                    android:text="894"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:textAlignment="center"
-                    android:text="@string/meters"/>
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/LocationPropertyText"
+                android:text="@string/meters"/>
         </LinearLayout>
-
     </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>
