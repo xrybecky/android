@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.bicyclebell.viko.bicyclebell.fragments.AuthenticationFragment;
+import com.bicyclebell.viko.bicyclebell.fragments.SimpleLocationFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -97,8 +98,8 @@ public class MainActivity extends AppCompatActivity {
                         FragmentManager fragMan = getFragmentManager();
                         FragmentTransaction fragTransaction = fragMan.beginTransaction();
 
-                        android.app.Fragment fragmentAuthentication = new AuthenticationFragment();
-                        fragTransaction.add(ll.getId(), fragmentAuthentication , "fragmentAuthentication");
+                        SimpleLocationFragment fragmentSimpleLocation = new SimpleLocationFragment();
+                        fragTransaction.add(ll.getId(), fragmentSimpleLocation , "fragmentSimpleLocation");
                         fragTransaction.commit();
 
                     }

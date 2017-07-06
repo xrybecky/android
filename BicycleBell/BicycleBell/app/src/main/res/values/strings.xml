@@ -1,7 +1,21 @@
 <resources>
     <string name="app_name">BicycleBell</string>
     <string name="icon_bell">&#xf0f3;</string>
+    <string name="icon_up_down">&#xf0dc;</string>
+    <string name="icon_up">&#xf0de;</string>
+    <string name="icon_down">&#xf0dd;</string>
+    <string name="icon_speedmeter">&#xf0e4;</string>
+    <string name="icon_distance">&#xf07e;</string>
 
     <!-- Texts -->
     <string name="more_features">More awesome features</string>
+    <string name="altitude">Altitude</string>
+    <string name="speed">Speed</string>
+    <string name="distance">Distance</string>
+    <string name="kmh">km/h</string>
+    <string name="meters">meters</string>
+    <string name="kilometers">km</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
