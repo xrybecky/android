@@ -1,11 +1,15 @@
 package com.bicyclebell.viko.bicyclebell;
 
+import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +17,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
+import com.bicyclebell.viko.bicyclebell.fragments.AuthenticationFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,13 +41,12 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 // Threading
                 new Thread(new Runnable() {
                     public void run() {
 
                         // Media player
-                        if(mediaPlayer != null){
+                        if (mediaPlayer != null) {
                             mediaPlayer.stop();
                             mediaPlayer.release();
                             mediaPlayer = null;
@@ -60,6 +65,59 @@ public class MainActivity extends AppCompatActivity {
                 R.animator.button_pulse);
         set.setTarget(button);
         set.start();
+
+
+        // More features button
+        Button buttonMoreFeatures = (Button) findViewById(R.id.more_features_button);
+        buttonMoreFeatures.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // TODO: check for internet connection
+
+                // TODO: float out animation
+                AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(context,
+                        R.animator.flight_up);
+                set.setTarget(view);
+
+                set.addListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animator) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animator animator) {
+
+                        // find parent layout
+                        LinearLayout ll = (LinearLayout) findViewById(R.id.viewA);
+                        ll.removeAllViews();
+
+                        // replace content with fragment
+                        FragmentManager fragMan = getFragmentManager();
+                        FragmentTransaction fragTransaction = fragMan.beginTransaction();
+
+                        android.app.Fragment fragmentAuthentication = new AuthenticationFragment();
+                        fragTransaction.add(ll.getId(), fragmentAuthentication , "fragmentAuthentication");
+                        fragTransaction.commit();
+
+                    }
+
+                    @Override
+                    public void onAnimationCancel(Animator animator) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animator animator) {
+
+                    }
+                });
+
+                set.start();
+            }
+
+        });
 
     }
 
